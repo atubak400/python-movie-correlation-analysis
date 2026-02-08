@@ -1,0 +1,28 @@
+# 1) Create .gitignore (this will fix the ".gitignore did not match any files" issue)
+cat > .gitignore << 'EOF'
+# Virtual environments
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+EOF
+
+# 2) Add and commit the .gitignore
+git add .gitignore
+git commit -m "Add .gitignore"
+
+# 3) Confirm .venv stays untracked (this is GOOD)
+git status
